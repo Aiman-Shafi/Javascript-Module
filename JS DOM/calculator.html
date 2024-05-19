@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="max-w-[800px] shadow-xl mx-auto p-10 mt-10">
+      <h2 class="text-3xl font-bold text-center">Let's Calculate ➗</h2>
+
+      <!-- Calculation Input  -->
+      <div
+        class="w-[500px] mx-auto p-4 rounded-lg mt-10 flex flex-col gap-4 shadow-lg"
+      >
+        <input
+          name="value1"
+          type="text"
+          placeholder="insert value 1"
+          class="border-2 w-full p-2 rounded-xl capitalize"
+          value="20"
+          id="input1"
+        />
+        <input
+          name="value1"
+          type="text"
+          placeholder="insert value 2 "
+          class="border-2 w-full p-2 rounded-xl capitalize"
+          id="input2"
+          value="10"
+        />
+        <button
+          id="calulate"
+          class="bg-black text-white rounded-xl py-2 hover:bg-gray-700"
+          onclick="calculate()"
+        >
+          Let's Calculate
+        </button>
+        <div id="results" class="mt-6 text-center text-xl capitalize">
+          <h4>Add: <span id="add">0</span></h4>
+          <h4>multiply: <span id="multiply">0</span></h4>
+          <h4>divide: <span id="divide">0</span></h4>
+          <h4>substration: <span id="substration">0</span></h4>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let input1 = document.getElementById("input1");
+      let input2 = document.getElementById("input2");
+
+      function calculate() {
+        let sum = parseInt(input1.value) + parseInt(input2.value);
+
+        let divide = parseInt(input1.value) / parseInt(input2.value);
+
+        let multiply = parseInt(input1.value) * parseInt(input2.value);
+
+        let substration = parseInt(input1.value) - parseInt(input2.value);
+
+        document.getElementById("add").innerHTML = sum;
+        document.getElementById("multiply").innerHTML = multiply;
+        document.getElementById("divide").innerHTML = divide;
+        document.getElementById("substration").innerHTML = substration;
+
+        input1.value = "";
+        input2.value = "";
+      }
+    </script>
+  </body>
+</html>
