@@ -180,3 +180,5 @@ submit.addEventListener("click", createTask);
 //   console.log("test");
 //   console.log(event);
 // }
+
+console.log("test");
