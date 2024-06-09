@@ -16,6 +16,9 @@
         .edit {
           @apply bg-green-600 p-2 text-white;
         }
+        .input {
+          @apply peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-3xl;
+        }
       }
     </style>
   </head>
@@ -33,12 +36,7 @@
               for="UserEmail"
               class="relative block bg-transparent pt-10 focus-within:border-blue-600"
             >
-              <input
-                type="text"
-                id="task-input"
-                placeholder=""
-                class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-3xl"
-              />
+              <input type="text" id="task-input" placeholder="" class="input" />
 
               <span
                 class="absolute start-0 top-0 -translate-y-1/2 text-xl font-bold text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-xl peer-focus:top-0 peer-focus:text-xl"

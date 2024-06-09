@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      /* font-size: 20px; */
+      margin-top: 40px;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .box {
+      border: 2px solid gainsboro;
+      padding: 10px;
+      /* max-width: 200px; */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      font-size: 30px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .advice {
+      margin: 30px 0;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <button id="generate">Give me an advice 🌟</button>
+    <div class="advice"><h2></h2></div>
+    <div class="container posts">
+      <!-- <div class="box">
+        <img src="" alt="" />
+        <h4>id</h4>
+        <h2>title</h2>
+      </div> -->
+    </div>
+  </body>
+  <!-- <script src="app.js"></script> -->
+  <!-- <script src="randomuser.js"></script> -->
+  <script src="advice.js"></script>
+</html>
