@@ -6,9 +6,58 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      console.log("new test");
-    </script>
-    <script src="app.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      img {
+        max-width: 100px;
+      }
+
+      .product {
+        border: 2px solid gray;
+        margin-top: 10px;
+        padding: 10px;
+      }
+
+      .loader {
+        width: 200px;
+      }
+
+      .preloader {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+      }
+    </style>
+    <!-- <section>
+      <h1>Hello Javascript!</h1>
+      <button id="stop">Stop Timeout!</button>
+    </section> -->
+    <div class="preloader">
+      <img
+        src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/media/a351d9e0236c03a539181b95faced9e0.gif"
+        alt="loader"
+        class="loader"
+      />
+    </div>
+    <h2>All Products</h2>
+    <section id="loader">
+      <img
+        src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/media/a351d9e0236c03a539181b95faced9e0.gif"
+        alt="loader"
+        class="loader"
+      />
+    </section>
+    <section class="products"></section>
+    <section class="error"></section>
+    <!-- <script src="app.js"></script> -->
+    <!-- <script src="fetch.js"></script> -->
+    <script src="async.js"></script>
   </body>
 </html>
