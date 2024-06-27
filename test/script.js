@@ -3,6 +3,7 @@ const baseUrl = "https://fakestoreapi.com/products";
 async function fetchProducts(limit = 10, page = 1) {
   const response = await fetch(`${baseUrl}?limit=${limit}&page=${page}`);
   const data = await response.json();
+  displayResults(data);
   return data;
 }
 
@@ -47,6 +48,7 @@ function applyFilters(data) {
   const checkedCategories = Array.from(
     document.querySelectorAll('input[name="category"]:checked')
   ).map((input) => input.value);
+
   const searchQuery = document
     .getElementById("searchInput")
     .value.toLowerCase();
@@ -66,28 +68,29 @@ function handlePagination(page) {
   fetchProducts(10, page).then(displayResults);
 }
 
-function initializePagination() {
-  const paginationContainer = document.getElementById("pagination");
-  for (let i = 1; i <= 10; i++) {
-    // Assuming there are 10 pages
-    const button = document.createElement("button");
-    button.textContent = i;
-    button.dataset.page = i;
-    paginationContainer.appendChild(button);
-  }
-}
+// function initializePagination() {
+//   const paginationContainer = document.getElementById("pagination");
+//   for (let i = 1; i <= 10; i++) {
+//     // Assuming there are 10 pages
+//     const button = document.createElement("button");
+//     button.textContent = i;
+//     button.dataset.page = i;
+//     paginationContainer.appendChild(button);
+//   }
+// }
 
 document.getElementById("searchInput").addEventListener("input", handleSearch);
-document.getElementById("pagination").addEventListener("click", (event) => {
-  if (event.target.tagName === "BUTTON") {
-    const page = parseInt(event.target.dataset.page);
-    handlePagination(page);
-  }
-});
+// document.getElementById("pagination").addEventListener("click", (event) => {
+//   if (event.target.tagName === "BUTTON") {
+//     const page = parseInt(event.target.dataset.page);
+//     handlePagination(page);
+//   }
+// });
 document.querySelectorAll('input[name="category"]').forEach((checkbox) => {
   checkbox.addEventListener("change", handleFilters);
 });
 
 // Initial setup
-initializePagination();
-fetchProducts().then(displayResults);
+// initializePagination();
+// fetchProducts().then(displayResults);
+fetchProducts();
